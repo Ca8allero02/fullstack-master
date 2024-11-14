@@ -1,17 +1,39 @@
-// Head.js
+// HomePage.js
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import './HomePage.css';
 
-const Head = ({ title, description, keywords }) => {
+const HomePage = () => {
     return (
-        <Helmet>
-            <title>{title}</title>
-            <meta name="description" content={description} />
-            <meta name="keywords" content={keywords} />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel="icon" href="/favicon.ico" />
-        </Helmet>
+        <div className="homepage">
+            {/* Logo o imagen de encabezado */}
+            <header className="header">
+                <img src="/path/to/logo.png" alt="Logo" className="logo" />
+                <h1>Bienvenidos a Mi Sitio Web</h1>
+            </header>
+
+            {/* Barra de búsqueda */}
+            <div className="search-bar">
+                <input 
+                    type="text" 
+                    placeholder="Buscar..." 
+                    className="search-input" 
+                />
+                <button className="search-button">Buscar</button>
+            </div>
+
+            {/* Botones principales */}
+            <div className="buttons">
+                <button className="main-button">Iniciar sesión</button>
+                <button className="main-button">Registrarse</button>
+            </div>
+
+            {/* Contenido adicional */}
+            <div className="content">
+                <p>Explora nuestro contenido y descubre todo lo que tenemos para ofrecer.</p>
+                <button className="explore-button">Explorar</button>
+            </div>
+        </div>
     );
 };
 
-export default Head;
+export default HomePage;
