@@ -3,6 +3,7 @@ import React from 'react';
 import './head.css';
 import logo from './assets/images/icon.png'
 
+
 const HomePage = () => {
     return (
         <div className="homepage">
@@ -23,9 +24,10 @@ const HomePage = () => {
             </div>
 
             {/* Botones principales */}
-            <div className="buttons">
-                <button className="main-button">Iniciar sesión</button>
-                <button className="main-button">Registrarse</button>
+            <div>
+                <a class="button" href='/api/login'>Iniciar sesión</a>
+                <br></br>
+                <a class="button" href='/api/register'>registrate es gratis 🪙</a>
             </div>
 
             {/* Contenido adicional */}
