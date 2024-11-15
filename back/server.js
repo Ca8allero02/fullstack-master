@@ -55,7 +55,7 @@ app.post('/api/login', (req, res) => {
 
         bcrypt.compare(password, user.password, (err, isMatch) => {
             if (err || !isMatch) return res.status(401).json({ message: 'Contraseña incorrecta.' });
-            res.json({ message: 'Inicio de sesión exitoso.', profile: user.profile });
+            res.json({ message: 'Inicio de sesión exitoso.', profile: user.estado });
         });
     });
 });

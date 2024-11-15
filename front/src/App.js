@@ -23,7 +23,7 @@ function App() {
             setMessage(response.data.message);
             if (isLogin) {
                 setIsAuthenticated(true);
-                setUserProfile(response.data.profile);
+                setUserProfile(response.data.estado);
             }
         } catch (error) {
             setMessage(error.response?.data?.message || 'Error en la solicitud');
