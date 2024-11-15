@@ -4,6 +4,7 @@ import axios from 'axios';
 import Producto from './componentes/Producto';
 import './App.css';
 import Head from './componentes/head';
+import Footer from './componentes/footer'
 
 function App() {
     const [email, setEmail] = useState('');
@@ -68,6 +69,8 @@ function App() {
                     {message && <p>{message}</p>}
                 </div>
             )}
+
+            <Footer />
         </div>
     );
 }

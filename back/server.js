@@ -11,8 +11,8 @@ app.use(express.json());
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'admin',
-    password: 'admin',
+    user: 'root',
+    password: '',
     database: 'fullstack'
 });
 
