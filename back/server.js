@@ -25,15 +25,24 @@ db.connect(err => {
 app.post('/api/register', (req, res) => {
     const { email, password } = req.body;
 
+    if (!email || !password) {
+        return res.status(400).json({ message: 'El correo y la contraseña son obligatorios.' });
+    }
+
     bcrypt.hash(password, 10, (err, hash) => {
         if (err) return res.status(500).json({ message: 'Error al hashear la contraseña.' });
 
-        db.query('INSERT INTO users (email, password, profile) VALUES (?, ?, ?)', [email, hash, 0], (error) => {
-            if (error) return res.status(400).json({ message: 'Error al registrar el usuario.' });
+        const sql = 'INSERT INTO users (email, password, profile) VALUES (?, ?, ?)';
+        db.query(sql, [email, hash, 0], (error) => {
+            if (error) {
+                console.error('Error al registrar el usuario:', error);
+                return res.status(400).json({ message: 'Error al registrar el usuario.' });
+            }
             res.status(201).json({ message: 'Usuario registrado exitosamente.' });
         });
     });
 });
+
 
 // Inicio de sesión
 app.post('/api/login', (req, res) => {
