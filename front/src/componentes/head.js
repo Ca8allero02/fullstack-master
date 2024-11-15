@@ -1,13 +1,14 @@
-// HomePage.js
+// head.js
 import React from 'react';
 import './head.css';
+import logo from './assets/images/icon.png'
 
 const HomePage = () => {
     return (
         <div className="homepage">
             {/* Logo o imagen de encabezado */}
             <header className="header">
-                <img src="/path/to/logo.png" alt="Logo" className="logo" />
+                <img src={logo} alt="Logo" className="logo" />
                 <h1>Bienvenidos a Mi Sitio Web</h1>
             </header>
 
