@@ -32,7 +32,7 @@ app.post('/api/register', (req, res) => {
     bcrypt.hash(password, 10, (err, hash) => {
         if (err) return res.status(500).json({ message: 'Error al hashear la contraseña.' });
 
-        const sql = 'INSERT INTO users (email, password, profile) VALUES (?, ?, ?)';
+        const sql = 'INSERT INTO users (email, password, estado) VALUES (?, ?, ?)';
         db.query(sql, [email, hash, 0], (error) => {
             if (error) {
                 console.error('Error al registrar el usuario:', error);
