@@ -27,7 +27,7 @@ const HomePage = () => {
             <div>
                 <a class="button" href='/api/login'>Iniciar sesión</a>
                 <br></br>
-                <a class="button" href='/api/register'>registrate es gratis 🪙</a>
+                <a class="button" href='/api/register'>registrate es gratis</a>
             </div>
 
             {/* Contenido adicional */}
