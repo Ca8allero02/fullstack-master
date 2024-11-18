@@ -1,10 +1,11 @@
 // App.js
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Producto from './componentes/Producto';
 import './App.css';
 import Head from './componentes/head';
-import Footer from './componentes/footer'
+import Footer from './componentes/footer';
 
 function App() {
     const [email, setEmail] = useState('');
@@ -30,48 +31,51 @@ function App() {
         }
     };
 
-    return (  
-        <div className="container">
-            {/* Componente Head */}
-            <Head 
-                title="Mi Aplicación React" 
-                description="Esta es una página de inicio de sesión" 
-                keywords="React, autenticación, ejemplo" 
-            />
-
-            {isAuthenticated ? (
-                <Producto userProfile={userProfile} />
-            ) : (
-                <div className="login-container">
-                    <h1>{isLogin ? 'Bienvenido, por favor inicia sesión' : 'Registrarse'}</h1>
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            type="email"
-                            placeholder="Correo Electrónico"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                        <input
-                            type="password"
-                            placeholder="Contraseña"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                        <button type="submit">
-                            {isLogin ? 'Iniciar Sesión' : 'Registrarse'}
-                        </button>
-                    </form>
-                    <button onClick={() => setIsLogin(!isLogin)}>
-                        {isLogin ? '¿No tienes una cuenta? Regístrate' : '¿Ya tienes una cuenta? Inicia sesión'}
-                    </button>
-                    {message && <p>{message}</p>}
-                </div>
-            )}
-
-            <Footer />
-        </div>
+    return (
+        <Router>
+            <div className="container">
+                <Head />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            isAuthenticated ? (
+                                <Producto userProfile={userProfile} />
+                            ) : (
+                                <div className="login-container">
+                                    <h1>{isLogin ? 'Bienvenido, por favor inicia sesión' : 'Registrarse'}</h1>
+                                    <form onSubmit={handleSubmit}>
+                                        <input
+                                            type="email"
+                                            placeholder="Correo Electrónico"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                        />
+                                        <input
+                                            type="password"
+                                            placeholder="Contraseña"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            required
+                                        />
+                                        <button type="submit">
+                                            {isLogin ? 'Iniciar Sesión' : 'Registrarse'}
+                                        </button>
+                                    </form>
+                                    <button onClick={() => setIsLogin(!isLogin)}>
+                                        {isLogin ? '¿No tienes una cuenta? Regístrate' : '¿Ya tienes una cuenta? Inicia sesión'}
+                                    </button>
+                                    {message && <p>{message}</p>}
+                                </div>
+                            )
+                        }
+                    />
+                    <Route path="/productos" element={<Producto userProfile={userProfile} />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
     );
 }
 
