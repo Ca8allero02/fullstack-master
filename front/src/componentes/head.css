@@ -1,51 +1,55 @@
-.homepage { 
-    text-align: center;
+.homepage {
+    text-align: left;
     font-family: Arial, sans-serif;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .header {
-    margin-top: 10px;  /* Reducir el margen superior */
+    margin-top: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
     align-items: center;
-    gap: 10px;  /* Reducir espacio entre el logo y el título */
+    gap: 10px;
 }
 
 .logo {
-    width: 80px;  /* Reducir el tamaño del logo */
+    width: 80px;
     height: auto;
 }
 
 .title {
-    font-size: 1.2rem;  /* Reducir el tamaño del texto */
+    font-size: 1.2rem;
     color: #333;
     font-weight: bold;
     margin: 0;
 }
 
 .search-bar {
-    margin: 15px 0;  /* Reducir el margen de la barra de búsqueda */
     display: flex;
-    justify-content: center;
-    gap: 8px;  /* Reducir espacio entre el input y el botón */
+    justify-content: flex-end; /* Alinea la barra de búsqueda a la derecha */
+    align-items: bottom;
+    gap: 15px;
+    margin: 20px; /* Elimina el margen vertical */
 }
 
 .search-input {
-    padding: 6px;  /* Reducir padding para hacer el campo de texto más pequeño */
-    width: 200px;  /* Reducir el ancho del campo de texto */
+    padding: 6px;
+    width: 200px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .search-button {
-    padding: 6px 12px;  /* Reducir padding del botón */
+    padding: 6px 12px;
     background-color: #007B9A;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.8rem;  /* Reducir tamaño de la fuente */
+    font-size: 0.8rem;
 }
 
 .search-button:hover {
@@ -53,10 +57,16 @@
 }
 
 .buttons {
-    display: none;  /* Mantener los botones ocultos */
+    display: none;
 }
 
 .content {
-    margin-top: 15px;  /* Reducir margen superior */
+    margin-top: 15px;
+    margin-right: 15px;
 }
 
+.explore-button{
+        display: flex;
+        justify-content: flex-end;
+        align-items: end;
+}

@@ -19,16 +19,6 @@ const HomePage = () => {
                 <button className="search-button">Buscar</button>
             </div>
 
-            {/* Botones principales */}
-            <nav>
-            <Link to="/api/login">
-                <button>Iniciar Sesión</button>
-            </Link>
-            <Link to="/api/register">
-                <button>Registrarse</button>
-            </Link>
-        </nav>
-
             {/* Contenido adicional */}
             <div className="content">
                 <p>Explora nuestro contenido y descubre todo lo que tenemos para ofrecer.</p>
