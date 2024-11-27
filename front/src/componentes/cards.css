@@ -1,14 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #e8f5e9; /* Fondo más claro y fresco */
+    color: #333;
     text-align: center;
 }
 
 h1 {
     margin: 20px 0;
-    color: #333;
+    color: #2e7d32; /* Color verde oscuro */
+    font-size: 2.5em;
 }
 
 .container {
@@ -19,49 +21,88 @@ h1 {
 }
 
 .card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    width: 260px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
     text-align: center;
+    overflow: hidden; /* Para evitar que el contenido sobresalga */
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
     margin: 10px 0;
-    color: #555;
+    color: #2e7d32; /* Título en verde */
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 .card p {
-    font-size: 0.9em;
-    color: #666;
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .card button {
-    margin: 5px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 0.9em;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .card button.buy {
-    background-color: #28a745;
+    background-color: #28a745; /* Verde para comprar */
     color: white;
 }
 
 .card button.view {
-    background-color: #007bff;
+    background-color: #007bff; /* Azul para ver */
     color: white;
 }
 
-.card button:hover {
-    opacity: 0.9;
+.card button.buy:hover {
+    background-color: #218838; /* Verde oscuro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.card button.view:hover {
+    background-color: #0056b3; /* Azul oscuro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.card button:active {
+    transform: scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo adicional para un toque moderno */
+.card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #28a745, #007bff);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }

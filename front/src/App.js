@@ -6,6 +6,7 @@ import Producto from './componentes/Producto';
 import './App.css';
 import Head from './componentes/head';
 import Footer from './componentes/footer';
+import Cards from './componentes/cards';
 
 function App() {
     const [email, setEmail] = useState('');
@@ -71,8 +72,10 @@ function App() {
                             )
                         }
                     />
+                    
                     <Route path="/productos" element={<Producto userProfile={userProfile} />} />
                 </Routes>
+                <Cards/>
                 <Footer />
             </div>
         </Router>
