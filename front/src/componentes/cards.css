@@ -3,20 +3,26 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    text-align: center;
+    display: flex; /* Flexbox para alinear contenido */
+    justify-content: space-between; /* Espacio uniforme entre las tarjetas */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Usa toda la altura de la ventana */
 }
 
 h1 {
-    margin: 20px 0;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
     color: #333;
 }
 
 .container {
     display: flex;
-    flex-direction: row; /* Coloca los elementos en línea horizontal */
-    justify-content: center;
-    gap: 20px; /* Espacio entre las tarjetas */
-    padding: 20px;
+    width: 100%;
+    padding: 0 20px; /* Margen a los lados */
+    gap: 10px; /* Espacio entre tarjetas */
 }
 
 .card {
