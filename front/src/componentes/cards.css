@@ -3,26 +3,23 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    display: flex; /* Flexbox para alinear contenido */
-    justify-content: space-between; /* Espacio uniforme entre las tarjetas */
-    align-items: center; /* Centra verticalmente */
+    display: flex; /* Habilita Flexbox */
+    flex-direction: column; /* Alinea verticalmente */
+    align-items: center; /* Centra horizontalmente */
     height: 100vh; /* Usa toda la altura de la ventana */
 }
 
 h1 {
-    margin: 0;
-    position: absolute;
-    top: 10px;
-    width: 100%;
-    text-align: center;
+    margin: 20px 0;
     color: #333;
 }
 
 .container {
-    display: flex;
-    width: 100%;
-    padding: 0 20px; /* Margen a los lados */
-    gap: 10px; /* Espacio entre tarjetas */
+    display: flex; /* Flexbox para organizar tarjetas horizontalmente */
+    justify-content: space-between; /* Espacio entre extremos */
+    align-items: center; /* Alinea tarjetas verticalmente */
+    width: 100%; /* Ocupa toda la ventana */
+    padding: 0 20px; /* Márgenes en los lados */
 }
 
 .card {
