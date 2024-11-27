@@ -3,10 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    display: flex; /* Habilita Flexbox */
-    flex-direction: column; /* Alinea verticalmente */
-    align-items: center; /* Centra horizontalmente */
-    height: 100vh; /* Usa toda la altura de la ventana */
+    text-align: center;
 }
 
 h1 {
@@ -15,11 +12,10 @@ h1 {
 }
 
 .container {
-    display: flex; /* Flexbox para organizar tarjetas horizontalmente */
-    justify-content: space-between; /* Espacio entre extremos */
-    align-items: center; /* Alinea tarjetas verticalmente */
-    width: 100%; /* Ocupa toda la ventana */
-    padding: 0 20px; /* Márgenes en los lados */
+    display: flex; /* Flexbox para colocar las tarjetas en fila */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
 }
 
 .card {
