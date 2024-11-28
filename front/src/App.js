@@ -7,6 +7,7 @@ import './App.css';
 import Cards from './componentes/cards';
 import Head from './componentes/head';
 import Footer from './componentes/footer';
+import CompraExitosa from './componentes/pago';
 
 function App() {
     const [email, setEmail] = useState('');
@@ -42,9 +43,9 @@ function App() {
                         element={
                             isAuthenticated ? (
                                 userProfile === 1 ? (
-                                    <Cards /> // Mostrar Cards si el estado es 1
+                                    <Cards />
                                 ) : (
-                                    <Producto userProfile={userProfile} /> // Mostrar Producto si el estado es 0
+                                    <Producto userProfile={userProfile} />
                                 )
                             ) : (
                                 <div className="login-container">
@@ -77,6 +78,7 @@ function App() {
                         }
                     />
                     <Route path="/productos" element={<Producto userProfile={userProfile} />} />
+                    <Route path="/pago" element={<CompraExitosa />} />
                 </Routes>
                 <Footer />
             </div>

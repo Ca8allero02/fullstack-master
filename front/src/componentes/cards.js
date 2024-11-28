@@ -1,9 +1,10 @@
-// Cards.js
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './cards.css';
 
 const Cards = () => {
     const [productos, setProductos] = useState([]);
+    const navigate = useNavigate(); // Hook de navegación
 
     useEffect(() => {
         // Realizar la llamada a la API para obtener los productos
@@ -17,6 +18,7 @@ const Cards = () => {
             });
     }, []);
 
+
     return (
         <div>
             <h1>Tienda de Productos</h1>
@@ -28,7 +30,7 @@ const Cards = () => {
                         <p>{producto.marca}</p>
                         <p>Inventario: {producto.inventario}</p>
                         <p>Precio: ${producto.valor}</p>
-                        <button className="buy">Comprar</button>
+                        <button className="buy" onClick={() => navigate('/pago')}>Comprar</button>
                         <button className="view">Ver</button>
                     </div>
                 ))}

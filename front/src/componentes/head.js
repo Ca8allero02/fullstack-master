@@ -3,7 +3,7 @@ import React from 'react';
 import './head.css';
 import logo from './assets/images/icon.png';
 
-const HomePage = () => {
+const Head = () => {
     return (
         <div className="homepage">
             {/* Logo o imagen de encabezado */}
@@ -27,4 +27,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default Head;
