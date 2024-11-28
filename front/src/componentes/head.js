@@ -1,6 +1,5 @@
 // head.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './head.css';
 import logo from './assets/images/icon.png';
 
