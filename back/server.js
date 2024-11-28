@@ -47,18 +47,30 @@ app.post('/api/register', (req, res) => {
 // Inicio de sesión
 app.post('/api/login', (req, res) => {
     const { email, password } = req.body;
+    const sql = 'SELECT id, email, password, estado FROM users WHERE email = ?';
 
-    db.query('SELECT * FROM users WHERE email = ?', [email], (error, results) => {
-        if (error || results.length === 0) return res.status(400).json({ message: 'Usuario no encontrado.' });
+    db.query(sql, [email], (error, results) => {
+        if (error) {
+            console.error('Error en el inicio de sesión:', error);
+            return res.status(500).json({ message: 'Error en el servidor' });
+        }
 
-        const user = results[0];
-
-        bcrypt.compare(password, user.password, (err, isMatch) => {
-            if (err || !isMatch) return res.status(401).json({ message: 'Contraseña incorrecta.' });
-            res.json({ message: 'Inicio de sesión exitoso.', profile: user.estado });
-        });
+        if (results.length > 0) {
+            const user = results[0];
+            // Verificar la contraseña usando bcrypt
+            const isPasswordValid = bcrypt.compareSync(password, user.password);
+            if (isPasswordValid) {
+                res.json({ message: 'Inicio de sesión exitoso', estado: user.estado });
+            } else {
+                res.status(401).json({ message: 'Credenciales inválidas' });
+            }
+        } else {
+            res.status(401).json({ message: 'Credenciales inválidas' });
+        }
     });
 });
+
+
 
 // Agregar producto
 app.post('/api/productos', (req, res) => {

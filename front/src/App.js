@@ -1,12 +1,12 @@
 // App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Producto from './componentes/Producto';
 import './App.css';
+import Cards from './componentes/cards';
 import Head from './componentes/head';
 import Footer from './componentes/footer';
-import Cards from './componentes/cards';
 
 function App() {
     const [email, setEmail] = useState('');
@@ -41,7 +41,11 @@ function App() {
                         path="/"
                         element={
                             isAuthenticated ? (
-                                <Producto userProfile={userProfile} />
+                                userProfile === 1 ? (
+                                    <Cards /> // Mostrar Cards si el estado es 1
+                                ) : (
+                                    <Producto userProfile={userProfile} /> // Mostrar Producto si el estado es 0
+                                )
                             ) : (
                                 <div className="login-container">
                                     <h1>{isLogin ? 'Bienvenido, por favor inicia sesión' : 'Registrarse'}</h1>
@@ -72,10 +76,8 @@ function App() {
                             )
                         }
                     />
-                    
                     <Route path="/productos" element={<Producto userProfile={userProfile} />} />
                 </Routes>
-                <Cards/>
                 <Footer />
             </div>
         </Router>
