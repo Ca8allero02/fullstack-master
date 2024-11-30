@@ -8,6 +8,7 @@ import Cards from './componentes/cards';
 import Head from './componentes/head';
 import Footer from './componentes/footer';
 import CompraExitosa from './componentes/pago';
+import Pasarela from './componentes/pasarela';
 
 function App() {
     const [email, setEmail] = useState('');
@@ -79,6 +80,7 @@ function App() {
                     />
                     <Route path="/productos" element={<Producto userProfile={userProfile} />} />
                     <Route path="/pago" element={<CompraExitosa />} />
+                    <Route path='/pasarela' element={<Pasarela />}/>
                 </Routes>
                 <Footer />
             </div>

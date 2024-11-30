@@ -18,6 +18,16 @@ const Cards = () => {
             });
     }, []);
 
+    const agregarAlCarrito = (producto) => {
+        
+        const carritoActual = JSON.parse(localStorage.getItem('carrito')) || [];
+        
+        const nuevoCarrito = [...carritoActual, { ...producto, cantidad: 1 }];
+        
+        localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+        
+        navigate('/pasarela');
+    };
 
     return (
         <div>
@@ -30,7 +40,7 @@ const Cards = () => {
                         <p>{producto.marca}</p>
                         <p>Inventario: {producto.inventario}</p>
                         <p>Precio: ${producto.valor}</p>
-                        <button className="buy" onClick={() => navigate('/pago')}>Comprar</button>
+                        <button className="buy" onClick={() => agregarAlCarrito(producto)}>Comprar</button>
                         <button className="view">Ver</button>
                     </div>
                 ))}
