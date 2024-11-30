@@ -32,7 +32,7 @@ const Pago = () => {
 
   const manejarPago = (e) => {
     e.preventDefault();
-    alert('¡Gracias por tu compra!');
+    alert('🤑 Pedido confirmado, muchas gracias por su compra 🤑');
     localStorage.removeItem('carrito'); // Limpia el carrito
     setCarrito([]); // Limpia el estado del carrito
     window.location.href = '/'; // Redirige a la tienda
