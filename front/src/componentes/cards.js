@@ -41,7 +41,6 @@ const Cards = () => {
                         <p>Inventario: {producto.inventario}</p>
                         <p>Precio: ${producto.valor}</p>
                         <button className="buy" onClick={() => agregarAlCarrito(producto)}>Comprar</button>
-                        <button className="view">Ver</button>
                     </div>
                 ))}
             </div>
